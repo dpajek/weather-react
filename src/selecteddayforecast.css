@@ -1,0 +1,53 @@
+.selected-day-forecast {
+  display: flex;
+  flex-direction: row;
+  margin-top: 3vh;
+  column-gap: 3vw;
+}
+
+.selected-day-forecast .details {
+    background-color: rgba(150, 150, 150, 0.2);
+    border-radius: 10%;
+    padding: 2vh 3vh 2vh 3vh;
+    height: fit-content;
+}
+
+.selected-day-forecast .temperatures {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.selected-day-forecast .main-temp {
+    text-align: center;
+    font-size: 2em;
+    padding: 3vh;
+}
+
+.selected-day-forecast .left-details {
+    float: left;
+    align-self: center;
+    color: #444;
+    font-weight: normal;
+    font-size: 0.8em;
+}
+
+.selected-day-forecast .right-details {
+    float: right;
+    align-self: center;
+    color: #444;
+    font-weight: normal;
+    font-size: 0.8em;
+}
+
+.selected-day-forecast .detail {
+    align-self: flex-start;
+    font-weight: normal;
+    margin-top: 0.5em;
+}
+
+.selected-day-forecast .hourly {
+    background-color: rgba(150, 150, 150, 0.2);
+    padding: 2vh 3vh 2vh 3vh;
+    height: fit-content;
+}

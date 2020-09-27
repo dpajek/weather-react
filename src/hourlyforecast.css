@@ -1,0 +1,23 @@
+.hourly-forecast {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2vh;
+}
+
+.hourly-forecast .row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 2vw;
+  padding-bottom: 1vh;
+  margin-left: -5vh;
+  font-weight: normal;
+}
+
+.hourly-forecast .weather-icon {
+  height: 10vh;
+  min-height: 40px;
+  margin: -10px 0 -10px 0;
+}
+
+

@@ -1,0 +1,21 @@
+.current-weather {
+    display: flex;
+    height: 15vh;
+    align-items: center;
+}
+
+.current-weather .weather-icon {
+    height: 24vh;
+    min-height: 80px;
+}
+
+.current-weather .temp {
+    text-align: center;
+}
+
+.current-weather .feels-like {
+    color: #444;
+    font-weight: normal;
+    font-size: 0.8em;
+    margin-top: 0.5em;
+}
