@@ -3,16 +3,29 @@ import "./currentweather.css";
 
 export default class CurrentWeather extends React.Component {
   render() {
-    return (
-      <div className="current-weather">
+    const { current } = this.props;
+
+    const temp = current !== null ? Math.round(current.temp) : "--";
+    const feelsLike = current !== null ? Math.round(current.feels_like) : "--";
+    const icon = current !== null ? current.weather[0].icon : null;
+    const description =
+      current !== null ? current.weather[0].description : null;
+
+    const weatherIcon =
+      icon !== null ? (
         <img
           className="weather-icon"
-          alt="Weather description"
-          src="http://openweathermap.org/img/wn/10d@4x.png"
+          alt={description}
+          src={`http://openweathermap.org/img/wn/${icon}@4x.png`}
         />
+      ) : null;
+
+    return (
+      <div className="current-weather">
+        {weatherIcon}
         <div className="temp">
-          25&deg;C
-          <div className="feels-like">Feels like 31&deg;C</div>
+          <span>{temp}&deg;C</span>
+          <div className="feels-like">Feels like {feelsLike}</div>
         </div>
       </div>
     );

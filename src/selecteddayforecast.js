@@ -6,26 +6,40 @@ import HourlyForecast from "./hourlyforecast";
 
 export default class SelectedDayForecast extends React.Component {
   render() {
+    const { day, hourly } = this.props;
+    const temp = Math.round(day.temp.day);
+    const high = Math.round(day.temp.max);
+    const low = Math.round(day.temp.min);
+    const feelsLike = Math.round(day.feels_like.day);
+    const description = day.weather[0].description;
+    const humidity = day.humidity;
+    const pop = day.pop * 100;
+
+    const hourlyForecast =
+      hourly !== null ? (
+        <div className="hourly">
+          Hourly Forecast
+          <HourlyForecast hourly={hourly} />
+        </div>
+      ) : null;
+
     return (
       <div className="selected-day-forecast">
         <div className="details">
           Saturday, September 26
-          <div className="main-temp">25&deg;C</div>
+          <div className="main-temp">{temp}&deg;</div>
           <div className="left-details">
-            <div className="detail">Feels like 28&deg;C</div>
-            <div className="detail">High: 35&deg;C</div>
-            <div className="detail">Low: 22&deg;C</div>
+            <div className="detail">Feels like {feelsLike}</div>
+            <div className="detail">High: {high}</div>
+            <div className="detail">Low: {low}</div>
           </div>
           <div className="right-details">
-            <div className="detail">Raining</div>
-            <div className="detail">Humidity: 85%</div>
-            <div className="detail">POP: 15%</div>
+            <div className="detail">{description}</div>
+            <div className="detail">Humidity: {humidity}%</div>
+            <div className="detail">POP: {pop}%</div>
           </div>
         </div>
-        <div className="hourly">
-          Hourly Forecast
-          <HourlyForecast />
-        </div>
+        {hourlyForecast}
       </div>
     );
   }

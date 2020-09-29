@@ -3,20 +3,35 @@ import React from "react";
 import "./forecastcard.css";
 
 export default class ForecastCard extends React.Component {
-
   render() {
-    const {selected} = this.props;
-    const card_class = selected?"forecast-card forecast-card-selected":"forecast-card";
+    const { day, selected } = this.props;
+    const card_class = selected
+      ? "forecast-card forecast-card-selected"
+      : "forecast-card";
 
-    return (
-      <div className={card_class}>
-        <div className="week-day">Tue</div>
+    //console.log(day);
+
+    const high = Math.round(day.temp.max);
+    const low = Math.round(day.temp.min);
+    const icon = day.weather[0].icon;
+    const description = day.weather[0].description;
+
+    const weatherIcon =
+      icon !== null ? (
         <img
           className="weather-icon"
-          src="http://openweathermap.org/img/wn/10d@2x.png"
-          alt="Weather description"
+          alt={description}
+          src={`http://openweathermap.org/img/wn/${icon}@4x.png`}
         />
-        <div className="high-low">H: 30 | L: 23</div>
+      ) : null;
+
+    return (
+      <div className={card_class} onClick={this.props.onClick}>
+        <div className="week-day">Tue</div>
+        {weatherIcon}
+        <div className="high-low">
+          H: {high} | L: {low}
+        </div>
       </div>
     );
   }

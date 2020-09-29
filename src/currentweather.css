@@ -13,6 +13,10 @@
     text-align: center;
 }
 
+.current-weather .temp > span {
+    font-size: 3em;
+}
+
 .current-weather .feels-like {
     color: #444;
     font-weight: normal;

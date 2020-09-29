@@ -5,16 +5,21 @@ import "./sevendayforecast.css";
 
 export default class SevenDayForecast extends React.Component {
   render() {
-    return (
-      <div className="seven-day-forecast">
-        <ForecastCard />
-        <ForecastCard selected={true} />
-        <ForecastCard />
-        <ForecastCard />
-        <ForecastCard />
-        <ForecastCard />
-        <ForecastCard />
-      </div>
-    );
+    const { daily, selectedIndex } = this.props;
+
+    if (daily === null) return null;
+
+    const forecastCards = daily.map((day, i) => {
+      return i < 7 ? (
+        <ForecastCard
+          key={i}
+          day={day}
+          selected={i === selectedIndex}
+          onClick={() => this.props.onClick(i)}
+        />
+      ) : null;
+    });
+
+    return <div className="seven-day-forecast">{forecastCards}</div>;
   }
 }

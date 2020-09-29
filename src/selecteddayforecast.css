@@ -2,12 +2,12 @@
   display: flex;
   flex-direction: row;
   margin-top: 3vh;
-  column-gap: 3vw;
+  column-gap: 2vw;
 }
 
 .selected-day-forecast .details {
     background-color: rgba(150, 150, 150, 0.2);
-    border-radius: 10%;
+    border-radius: 2vh;
     padding: 2vh 3vh 2vh 3vh;
     height: fit-content;
 }
@@ -50,4 +50,5 @@
     background-color: rgba(150, 150, 150, 0.2);
     padding: 2vh 3vh 2vh 3vh;
     height: fit-content;
+    border-radius: 2vh;
 }
