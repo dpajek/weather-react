@@ -21,7 +21,7 @@ class App extends React.Component {
   componentDidMount() {
     axios
       .get(
-        "http://api.openweathermap.org/data/2.5/weather?q=oakville,ca&units=metric&appid=da4ae7b36217a0da6389f022926ce444"
+        "https://api.openweathermap.org/data/2.5/weather?q=oakville,ca&units=metric&appid=da4ae7b36217a0da6389f022926ce444"
       )
       .then((firstResponse) => {
         console.log(firstResponse.data);
