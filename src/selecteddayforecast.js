@@ -15,12 +15,13 @@ export default class SelectedDayForecast extends React.Component {
     const humidity = day.humidity;
     const pop = day.pop * 100;
     const date = new Date(day.dt * 1000).toDateString();
+    const dateNumber = new Date(day.dt * 1000).getDate();
 
     const hourlyForecast =
       hourly !== null ? (
         <div className="hourly">
           Hourly Forecast
-          <HourlyForecast hourly={hourly} />
+          <HourlyForecast hourly={hourly} currentDateNumber={dateNumber} />
         </div>
       ) : null;
 

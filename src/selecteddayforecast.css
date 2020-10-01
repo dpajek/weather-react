@@ -7,11 +7,12 @@
 }
 
 .selected-day-forecast .details {
-    background-color: rgba(150, 150, 150, 0.2);
+    background-color: var(--card-background-color);
     border-radius: 2vh;
     padding: 2vh 2vw 2vh 2vw;
     height: fit-content;
     text-align: center;
+    min-width: 15vw;
 }
 
 .selected-day-forecast .main-temp {
@@ -23,7 +24,7 @@
 .selected-day-forecast .left-details {
     float: left;
     align-self: center;
-    color: #444;
+    color: var(--secondary-text-color);
     font-weight: normal;
     font-size: 0.8em;
     text-align: left;
@@ -33,7 +34,7 @@
 .selected-day-forecast .right-details {
     float: right;
     align-self: center;
-    color: #444;
+    color: var(--secondary-text-color);
     font-weight: normal;
     font-size: 0.8em;
     text-align: left;
@@ -46,7 +47,7 @@
 }
 
 .selected-day-forecast .hourly {
-    background-color: rgba(150, 150, 150, 0.2);
+    background-color: var(--card-background-color);
     padding: 2vh 3vh 2vh 3vh;
     height: fit-content;
     border-radius: 2vh;

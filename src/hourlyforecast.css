@@ -14,10 +14,22 @@
   font-weight: normal;
 }
 
+.hourly-forecast .row .time {
+  min-width: 5em;
+}
+
+.hourly-forecast .row .temp {
+  min-width: 3em;
+}
+
+.hourly-forecast .row .feels-like {
+  min-width: 7em;
+}
+
 .hourly-forecast .weather-icon {
   height: 10vh;
   min-height: 40px;
-  margin: -10px 0 -10px 0;
+  margin: -10px 1em -10px 0;
 }
 
 

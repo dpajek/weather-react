@@ -1,0 +1,32 @@
+.fixed-header {
+  position: fixed;
+  top: infinite;
+  left: 0;
+  width: 100%;
+  min-height: 6vh;
+  align-items: center;
+  padding-left: 2%;
+  display: none;
+}
+
+.fixed-header > div {
+    font-size: 0.8em;
+}
+
+.scrolled-fixed-header {
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  column-gap: 1vw;
+  animation: appear 0.5s ease-in-out;
+}
+
+@keyframes appear {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+

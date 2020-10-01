@@ -6,8 +6,9 @@ import axios from "axios";
 import CurrentWeather from "./currentweather";
 import SevenDayForecast from "./sevendayforecast";
 import SelectedDayForecast from "./selecteddayforecast";
+import FixedHeader from "./fixedheader";
 
-import {APIKEY} from "./constants";
+import { APIKEY } from "./constants";
 
 class App extends React.Component {
   constructor(props) {
@@ -17,7 +18,21 @@ class App extends React.Component {
       daily: null,
       current: null,
       selectedIndex: 0,
+      currentMain: "",
     };
+  }
+
+  getMainCode(currentMain) {
+    console.log(currentMain);
+    if (currentMain === "Snow" || currentMain === "Thunderstorm")
+      return currentMain;
+    if (
+      currentMain === "Drizzle" ||
+      currentMain === "Clouds" ||
+      currentMain === "Rain"
+    )
+      return "Clouds";
+    return "Clear";
   }
 
   componentDidMount() {
@@ -30,6 +45,9 @@ class App extends React.Component {
         console.log(firstResponse.data);
         const lat = firstResponse.data.coord.lat;
         const lon = firstResponse.data.coord.lon;
+        const currentMain = this.getMainCode(firstResponse.data.weather[0].main);
+
+        this.setState({ currentMain: currentMain });
 
         const query = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,alerts&appid=${APIKEY}&units=metric`;
 
@@ -59,7 +77,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { current, daily, hourly, selectedIndex } = this.state;
+    const { current, daily, hourly, selectedIndex, currentMain } = this.state;
 
     const selectedDayForecast =
       daily !== null ? (
@@ -67,14 +85,17 @@ class App extends React.Component {
           day={daily[selectedIndex]}
           hourly={
             selectedIndex < 2
-              ? hourly.slice(24 * selectedIndex, 24 * (1 + selectedIndex))
+              ? hourly//.slice(24 * selectedIndex, 24 * (1 + selectedIndex))
               : null
           }
         />
       ) : null;
 
+      const backgroundClass = "App " + currentMain;
+
+
     return (
-      <div className="App">
+      <div className={backgroundClass}>
         <h1>Oakville, ON</h1>
         <CurrentWeather current={current} />
         <SevenDayForecast
@@ -83,6 +104,7 @@ class App extends React.Component {
           onClick={(i) => this.handleForecastCardClick(i)}
         />
         {selectedDayForecast}
+        <FixedHeader current={current} currentMain={currentMain} />
       </div>
     );
   }

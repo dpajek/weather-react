@@ -1,47 +1,41 @@
 :root {
-  background-image: url("assets/sunny.jpg");
+  --primary-text-color: #333;
+  --secondary-text-color: #444;
+  --card-background-color: rgba(150, 150, 150, 0.2);
+  --card-active-color: rgba(150, 150, 150, 0.3);
+  --card-border-color: rgba(150, 150, 150, 0.5);
+}
+
+.App {
+  padding: 2%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 1.1em;
+  color: var(--primary-text-color);
+  min-height: 100vh;
+}
+
+.Clear {
+  background-image: url("assets/sunny_min.jpg");
   background-attachment: fixed;
   background-size: cover;
 }
 
-.App {
-  margin: 2%;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: bold;
-  color: #333;
+.Clouds {
+  background-image: url("assets/cloudy_min.jpg");
+  background-attachment: fixed;
+  background-size: cover;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Snow {
+  background-image: url("assets/snow_min.jpg");
+  background-attachment: fixed;
+  background-size: cover;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Thunderstorm {
+  background-image: url("assets/storm_min2.jpg");
+  background-attachment: fixed;
+  background-size: cover;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
