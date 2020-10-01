@@ -7,6 +7,8 @@ import CurrentWeather from "./currentweather";
 import SevenDayForecast from "./sevendayforecast";
 import SelectedDayForecast from "./selecteddayforecast";
 
+import {APIKEY} from "./constants";
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -21,14 +23,15 @@ class App extends React.Component {
   componentDidMount() {
     axios
       .get(
-        "https://api.openweathermap.org/data/2.5/weather?q=oakville,ca&units=metric&appid=da4ae7b36217a0da6389f022926ce444"
+        "https://api.openweathermap.org/data/2.5/weather?q=oakville,ca&units=metric&appid=" +
+          APIKEY
       )
       .then((firstResponse) => {
         console.log(firstResponse.data);
         const lat = firstResponse.data.coord.lat;
         const lon = firstResponse.data.coord.lon;
 
-        const query = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=da4ae7b36217a0da6389f022926ce444&units=metric`;
+        const query = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,alerts&appid=${APIKEY}&units=metric`;
 
         axios
           .get(query)

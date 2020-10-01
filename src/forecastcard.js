@@ -15,6 +15,17 @@ export default class ForecastCard extends React.Component {
     const low = Math.round(day.temp.min);
     const icon = day.weather[0].icon;
     const description = day.weather[0].description;
+    const dayOfWeekInd = new Date(day.dt * 1000).getDay();
+
+    const daysOfWeek = [
+      'Sun',
+      'Mon',
+      'Tue',
+      'Wed',
+      'Thu',
+      'Fri',
+      'Sat'
+    ];
 
     const weatherIcon =
       icon !== null ? (
@@ -27,7 +38,7 @@ export default class ForecastCard extends React.Component {
 
     return (
       <div className={card_class} onClick={this.props.onClick}>
-        <div className="week-day">Tue</div>
+        <div className="week-day">{daysOfWeek[dayOfWeekInd]}</div>
         {weatherIcon}
         <div className="high-low">
           H: {high} | L: {low}

@@ -14,6 +14,7 @@ export default class SelectedDayForecast extends React.Component {
     const description = day.weather[0].description;
     const humidity = day.humidity;
     const pop = day.pop * 100;
+    const date = new Date(day.dt * 1000).toDateString();
 
     const hourlyForecast =
       hourly !== null ? (
@@ -26,7 +27,7 @@ export default class SelectedDayForecast extends React.Component {
     return (
       <div className="selected-day-forecast">
         <div className="details">
-          Saturday, September 26
+          {date}
           <div className="main-temp">{temp}&deg;</div>
           <div className="left-details">
             <div className="detail">Feels like {feelsLike}</div>
