@@ -9,7 +9,7 @@ const FixedHeader = (props) => {
 
   const handleScroll = () => {
     const offset = window.scrollY;
-    if (offset > 60) {
+    if (offset > 75) {
       setScrolled(true);
     } else {
       setScrolled(false);

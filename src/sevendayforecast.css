@@ -1,6 +1,6 @@
 .seven-day-forecast {
     display: flex;
     flex-direction: row;
-    margin-top: 3vh;
+    margin-top: 5vh;
     column-gap: 2vw;
 }
