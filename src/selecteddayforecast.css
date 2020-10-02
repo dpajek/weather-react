@@ -51,6 +51,7 @@
     padding: 2vh 3vh 2vh 3vh;
     height: fit-content;
     border-radius: 2vh;
+    max-width: 100%;
 }
 
 
@@ -64,5 +65,6 @@
 
       .selected-day-forecast .hourly {
         padding: 2vh 2vh 2vh 2vh;
+        margin-top: 2vh;
     }
   }
