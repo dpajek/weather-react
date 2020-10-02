@@ -10,7 +10,7 @@
 }
 
 .fixed-header > div {
-    font-size: 0.8em;
+  font-size: 0.8em;
 }
 
 .scrolled-fixed-header {
@@ -22,16 +22,19 @@
 }
 
 @keyframes appear {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+  from {
+    opacity: 0;
   }
+  to {
+    opacity: 1;
+  }
+}
 
-  @media (max-width: 800px) {
-    .App {
-      font-size: 0.9em;
-      }
+@media (max-width: 800px) {
+  .App {
+    font-size: 0.9em;
   }
+  .fixed-header > h1 {
+    font-size: 1.5em;
+  }
+}

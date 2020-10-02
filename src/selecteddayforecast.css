@@ -61,4 +61,8 @@
         row-gap: 2vh;
         align-items: center;
       }
+
+      .selected-day-forecast .hourly {
+        padding: 2vh 2vh 2vh 2vh;
+    }
   }
