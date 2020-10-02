@@ -23,3 +23,13 @@
     font-size: 0.8em;
     margin-top: 0.5em;
 }
+
+@media (max-width: 800px) {
+    .current-weather .weather-icon {
+        height: 16vh;
+        min-height: 60px;
+    }
+    .current-weather .temp > span {
+        font-size: 2em;
+    }
+  }

@@ -30,3 +30,8 @@
     }
   }
 
+  @media (max-width: 800px) {
+    .App {
+      font-size: 0.9em;
+      }
+  }
