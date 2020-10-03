@@ -5,7 +5,7 @@ This simple React app leverages the [OpenWeather API](https://openweathermap.org
 Here's a [live version](https://dpajek.github.io/weather-react/). 
 
 ## UI
-
+![Weather App](weather-react-ui.gif)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
